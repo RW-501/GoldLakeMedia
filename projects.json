@@ -1,0 +1,19 @@
+{
+    "projects": [
+        {
+            "title": "Project 1",
+            "url": "path-to-your-image-or-video-file.jpg",
+            "type": "image"
+        },
+        {
+            "title": "Project 2",
+            "url": "path-to-your-video-file.mp4",
+            "type": "video"
+        },
+        {
+            "title": "Project 3",
+            "url": "path-to-another-image-or-video",
+            "type": "image"
+        }
+    ]
+}
