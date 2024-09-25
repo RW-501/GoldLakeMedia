@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gold Lake Media</title>
+
+    <!-- FontAwesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             background-color: black;
@@ -11,6 +15,42 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('your-hero-video-poster.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .hero-text {
+            text-align: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-top: 20px;
+            opacity: 0.9;
         }
 
         header {
@@ -42,10 +82,25 @@
             border: 2px solid silver;
         }
 
+        /* Parallax Effect for About Section */
+        .parallax {
+            background-image: url('your-about-section-background.jpg');
+            min-height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
         .about-section {
-            background-color: #1a1a1a;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 50px 20px;
             text-align: center;
+            max-width: 800px;
         }
 
         .about-section h2 {
@@ -55,8 +110,6 @@
 
         .about-section p {
             font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         footer {
@@ -76,7 +129,6 @@
             margin: 0 15px;
             font-size: 24px;
             color: silver;
-            text-decoration: none;
             transition: color 0.3s;
         }
 
@@ -86,8 +138,20 @@
     </style>
 </head>
 <body>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="your-hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-text">
+            Gold Lake Media
+            <p>Bringing Stories to Life</p>
+        </div>
+    </section>
+
     <header>
-        Gold Lake Media
+        Our Work
     </header>
 
     <!-- Media Gallery Section -->
@@ -95,23 +159,26 @@
         <!-- Media will be injected here from JSON -->
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h2>About Gold Lake Media</h2>
-        <p>Gold Lake Media is a premier production company dedicated to bringing compelling stories to life through innovative film and digital media projects. Our creative vision is rooted in authenticity and originality, creating content that resonates with audiences worldwide.</p>
-    </section>
+    <!-- About Section with Parallax Background -->
+    <div class="parallax">
+        <div class="about-section">
+            <h2>About Gold Lake Media</h2>
+            <p>Gold Lake Media is a premier production company, committed to creating compelling narratives in film and digital media. We deliver stories that resonate with global audiences, driven by innovation and creativity.</p>
+        </div>
+    </div>
 
     <!-- Footer with Social Media Links -->
     <footer>
         <div class="social-media-icons">
-            <a href="#" title="Facebook">F</a>
-            <a href="#" title="Twitter">T</a>
-            <a href="#" title="Instagram">I</a>
-            <a href="#" title="LinkedIn">L</a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
         © 2024 Gold Lake Media
     </footer>
 
+    <!-- Script for fetching and displaying media -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mediaGallery = document.getElementById('media-gallery');
