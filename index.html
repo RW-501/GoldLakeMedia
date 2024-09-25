@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: #1c1c1c;
             padding: 20px;
@@ -19,39 +20,96 @@
             font-size: 36px;
             letter-spacing: 2px;
         }
+
         .media-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
         }
+
         .media-item {
             margin: 10px;
             width: 300px;
             height: 200px;
             position: relative;
         }
+
         img, video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border: 2px solid silver;
         }
+
+        .about-section {
+            background-color: #1a1a1a;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         footer {
             background-color: #1c1c1c;
             padding: 20px;
             text-align: center;
             font-size: 14px;
         }
+
+        .social-media-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .social-media-icons a {
+            margin: 0 15px;
+            font-size: 24px;
+            color: silver;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-media-icons a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <header>Gold Lake Media</header>
+    <header>
+        Gold Lake Media
+    </header>
+
+    <!-- Media Gallery Section -->
     <section class="media-gallery" id="media-gallery">
-        <!-- Media will be injected here -->
+        <!-- Media will be injected here from JSON -->
     </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Gold Lake Media</h2>
+        <p>Gold Lake Media is a premier production company dedicated to bringing compelling stories to life through innovative film and digital media projects. Our creative vision is rooted in authenticity and originality, creating content that resonates with audiences worldwide.</p>
+    </section>
+
+    <!-- Footer with Social Media Links -->
     <footer>
-        <!-- Social Media Links will go here -->
+        <div class="social-media-icons">
+            <a href="#" title="Facebook">F</a>
+            <a href="#" title="Twitter">T</a>
+            <a href="#" title="Instagram">I</a>
+            <a href="#" title="LinkedIn">L</a>
+        </div>
+        © 2024 Gold Lake Media
     </footer>
 
     <script>
@@ -59,7 +117,7 @@
             const mediaGallery = document.getElementById('media-gallery');
 
             // Fetch JSON data
-            fetch('projects.json') // Assuming your JSON is located at this path
+            fetch('projects.json')
                 .then(response => response.json())
                 .then(data => {
                     data.projects.forEach(project => {
